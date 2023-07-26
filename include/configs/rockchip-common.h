@@ -186,6 +186,8 @@
 	"boot_fit;"
 #else
 #define RKIMG_BOOTCOMMAND			\
+	"gpio clear gpio212;" \
+	"gpio set   gpio211;" \
 	"mmc rescan;" \
 	"mmc info;" \
 	"mmc list;" \

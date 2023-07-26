@@ -95,22 +95,7 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&gpio_led_red>;
 		vin-supply = <&vcc5v0_sys>;
-	};	
-
-	led_green_reg: led-green-reg {
-		u-boot,dm-pre-reloc;
-		compatible = "regulator-fixed";
-		regulator-name = "led_green_reg";
-		regulator-min-microvolt = <5000000>;
-		regulator-max-microvolt = <5000000>;
-		enable-active-high;
-		gpio = <&gpio4 RK_PA7 GPIO_ACTIVE_HIGH>;
-		regulator-boot-on;
-		regulator-always-on;
-		pinctrl-names = "default";
-		pinctrl-0 = <&gpio_led_green>;
-		vin-supply = <&vcc5v0_sys>;
-	};	
+	};		
 
 	led_blue_reg: led-blue-reg {
 		u-boot,dm-pre-reloc;
@@ -222,11 +207,7 @@
 		gpio_led_red: gpio-led-red {
 			rockchip,pins = <4 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
-		
-		gpio_led_green: gpio-led-green {
-			rockchip,pins = <4 RK_PA7 RK_FUNC_GPIO &pcfg_pull_none>;
-		};
-
+	
 		gpio_led_blue: gpio-led-blue {
 			rockchip,pins = <4 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
